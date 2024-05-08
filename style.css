@@ -8,3 +8,8 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(35deg, #9600ff, #aebaf8);
+}
