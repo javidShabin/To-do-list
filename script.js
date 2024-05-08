@@ -12,7 +12,11 @@ addBtn.addEventListener("click", () => {
         // If have any value in the input box
         // Create a list and add inputValue
         let list = document.createElement("li");
-        list.innerHTML = inputValue;
+        let span = document.createElement("span")
+        span.innerHTML = inputValue;
+        itemInput.value = "";
+        itemInput.focus()
+
         
         // Create a trash button
         let trash = document.createElement("i");
@@ -23,7 +27,7 @@ addBtn.addEventListener("click", () => {
         edit.classList.add("fas", "fa-edit");
 
         // Append items
-        list.append(trash, edit);
+        list.append( span, trash, edit);
         itemList.appendChild(list)
 
     }
@@ -43,7 +47,8 @@ itemList.addEventListener("click", (event) => {
     if (position.classList.contains("fa-edit")) {
         let editValue = prompt("Enet new value");
         let item = position.parentElement;
-        item.innerHTML = editValue
+        let span = document.querySelector("span")
+        span.innerHTML = editValue
     }
 })
 
