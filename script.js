@@ -28,3 +28,10 @@ addBtn.addEventListener("click", () => {
 
     }
 })
+itemList.addEventListener("click", (event) => {
+    let position = event.target;
+    if (position.classList.contains("fa-trash")) {
+        let item = position.parentElement;
+        item.remove()
+    }
+})
