@@ -28,10 +28,22 @@ addBtn.addEventListener("click", () => {
 
     }
 })
+
+// Remove items fuction
 itemList.addEventListener("click", (event) => {
     let position = event.target;
     if (position.classList.contains("fa-trash")) {
         let item = position.parentElement;
-        item.remove()
+        item.remove();
     }
 })
+
+itemList.addEventListener("click", (event) => {
+    let position = event.target;
+    if (position.classList.contains("fa-edit")) {
+        let editValue = prompt("Enet new value");
+        let item = position.parentElement;
+        item.innerHTML = editValue
+    }
+})
+
