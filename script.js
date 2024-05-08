@@ -10,38 +10,42 @@ let activityArray = [];
 
 const setLocalStorage = () => {
     // Set local to storage
-    localStorage.setItem("activity", inputValue);
+    localStorage.setItem("activity", JSON.stringify(activityArray));
 }
 
 const getLocalStorage = () => {
     // Get item from local storage
     // If have any value in the input
     if (localStorage.getItem("activity")) {
-        inputValue = localStorage.getItem("activity");
+        activityArray = JSON.parse(localStorage.getItem("activity"));
         buildUl();
+        console.log("Data found");
+    }else {
+        console.log("No data found");
     }
 }
 
 const buildUl = () => {
-    // If have any value in the input box
+    itemList.textContent = "";
+    activityArray.forEach((activities) => {
+        // If have any value in the input box
         // Create a list and add inputValue
         let list = document.createElement("li");
         let span = document.createElement("span");
-        span.innerHTML = inputValue;
+        span.innerHTML = activities;
         itemInput.value = "";
         itemInput.focus();
-
         // Create a trash button
         let trash = document.createElement("i");
         trash.classList.add("fas", "fa-trash");
-        
+    
         // Create a edit button
         let edit = document.createElement("i");
         edit.classList.add("fas", "fa-edit");
-
         // Append items
         list.append( span, trash, edit);
         itemList.appendChild(list);
+    })
 }
 
 // Add you activity
@@ -52,6 +56,8 @@ addBtn.addEventListener("click", () => {
         // If not have any value in the input box
         alert("Oops!, Enter any activity");
     }else {
+        activityArray.push(inputValue)
+        console.log(activityArray);
         // Set items to local stoorage
         setLocalStorage();
 
