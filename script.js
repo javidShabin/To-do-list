@@ -2,8 +2,22 @@ const addBtn = document.getElementById("add-btn");
 let itemList = document.querySelector(".todo-items-list");
 let itemInput = document.getElementById("todo-input");
 
+// The variable called globaly
+let inputValue = itemInput.value;
+
+const setLocalStorage = () => {
+    // Set local to storage
+    localStorage.setItem("activity", inputValue)
+}
+
+const getLocalStorage = () => {
+    // Get item from local storage
+    inputValue = localStorage.getItem("activity")
+}
+
+// Add you activity
 addBtn.addEventListener("click", () => {
-    let inputValue = itemInput.value;
+    inputValue = itemInput.value;
 
     if (!inputValue) {
         // If not have any value in the input box
@@ -17,7 +31,12 @@ addBtn.addEventListener("click", () => {
         itemInput.value = "";
         itemInput.focus()
 
-        
+        // Set items to local stoorage
+        setLocalStorage()
+
+        // Get itmes from local storage
+        getLocalStorage()
+
         // Create a trash button
         let trash = document.createElement("i");
         trash.classList.add("fas", "fa-trash");
