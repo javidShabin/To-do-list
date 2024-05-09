@@ -12,7 +12,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: #eec0c6;
-    background-image: linear-gradient(315deg, #9600ff 0%, #aebaf8 74%);
+    background-image: linear-gradient(315deg, #9600ff 0%, #a5b4ff 74%);
 }
 
 .container{
@@ -38,7 +38,7 @@ h1{
     outline: none;
     border: none;
     border-radius: 12px;
-    box-shadow: 3px 3px 10px ;
+    box-shadow: inset 7px 11px 24px 4px rgba(0,0,0,0.1);
 }
 
 .todo-box button{
@@ -51,6 +51,7 @@ h1{
     border: none;
     border-radius: 12px;
     margin-left: 10px;
+    box-shadow: 7px 11px 24px 4px rgba(0, 0, 0, 0.1);
     outline: none;
     transition: 0.3s;
 }
@@ -77,8 +78,7 @@ h1{
     font-weight: 700;
     color: black;
     animation: 0.3s ease-in-out;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 
 .fa-trash, .fa-edit{
