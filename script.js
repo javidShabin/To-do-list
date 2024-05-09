@@ -31,7 +31,7 @@ const buildUl = () => {
         // If have any value in the input box
         // Create a list and add inputValue
         let list = document.createElement("li");
-        // list.style.cssText = "animation-name: slideIn"
+        list.style.cssText = "animation-name: slideIn"
         let span = document.createElement("span");
         span.innerHTML = activities;
         itemInput.value = "";
@@ -90,6 +90,5 @@ itemList.addEventListener("click", (event) => {
         span.innerHTML = editValue;
     }
 })
-
 
 getLocalStorage();
