@@ -112,6 +112,6 @@ h1{
 .slideOut{
     transform: rotateX(60deg) translateY(-10px);
     opacity: 0;
-    transition: 1s;
+    transition: .4s;
 }
 

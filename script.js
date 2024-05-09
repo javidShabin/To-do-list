@@ -31,6 +31,7 @@ const buildUl = () => {
         // If have any value in the input box
         // Create a list and add inputValue
         let list = document.createElement("li");
+        list.style.cssText = "animation-name: slideIn"
         let span = document.createElement("span");
         span.innerHTML = activities;
         itemInput.value = "";
@@ -72,7 +73,11 @@ itemList.addEventListener("click", (event) => {
     let position = event.target;
     if (position.classList.contains("fa-trash")) {
         let item = position.parentElement;
-        item.remove();
+        item.classList.add("slideOut")
+        // Delete aniation
+        item.addEventListener("transitionend", () => {
+            item.remove();
+        })
     }
 })
 
@@ -85,5 +90,6 @@ itemList.addEventListener("click", (event) => {
         span.innerHTML = editValue;
     }
 })
+
 
 getLocalStorage();
